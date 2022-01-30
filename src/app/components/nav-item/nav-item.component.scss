@@ -1,0 +1,33 @@
+.nav-item-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-right: 10px;
+  border-radius: 4px 0 0 4px;
+  color: #a4a2a5;
+  margin-bottom: 15px;
+}
+
+.nav-item-container:hover {
+  background-color: rgb(239, 248, 252);
+}
+
+.nav-text {
+  font-size: 1rem;
+  margin-left: 24px;
+}
+
+.nav-icon {
+  fill: #a4a2a5;
+  margin-left: 10px;
+}
+
+.active {
+  border-right: 5px solid #7c08dab7;
+  color: #000;
+  font-weight: bold;
+  .nav-icon {
+    fill: #000;
+  }
+}

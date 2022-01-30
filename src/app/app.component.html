@@ -1,0 +1,20 @@
+<mat-sidenav-container class="app-container">
+    <mat-sidenav mode="side" opened class="side-nav">
+        <h1 class="app-name">
+            .todo
+        </h1>
+        <section class="menu">
+            <app-nav-item [navItem]="item" *ngFor="let item of sideMenu"></app-nav-item>
+        </section>
+        <section class="profile">
+            <div class="profile-details" routerLink="profile-details" routerLinkActive="profile-details-active">
+                <img src="../assets/images/profile-pic.png" alt="profile picture">
+                <span> Allen Mathews </span>
+            </div>
+            <app-nav-item [navItem]="item" *ngFor="let item of profileMenu"></app-nav-item>
+        </section>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

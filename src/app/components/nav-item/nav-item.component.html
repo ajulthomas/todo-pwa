@@ -1,0 +1,5 @@
+<div class="nav-item-container" matRipple [matRippleAnimation]="matRippleAnimationConfig" [routerLink]="navItem?.route"
+    routerLinkActive="active">
+    <mat-icon class="nav-icon" [svgIcon]="navItem.icon"></mat-icon>
+    <span class="nav-text"> {{ navItem?.name }}</span>
+</div>

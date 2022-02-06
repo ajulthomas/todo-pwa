@@ -1,1 +1,28 @@
-<p>progress works!</p>
+<div class="progress-container">
+    <header>
+        <h1>Progress View</h1>
+    </header>
+    <main>
+        <mat-card class="progress-bucket">
+            <mat-card-title> To do </mat-card-title>
+            <button mat-raised-button> + Add Tasks</button>
+            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'TODO'">
+                {{ task.name }}
+            </mat-card>
+        </mat-card>
+        <mat-card class="progress-bucket">
+            <mat-card-title> In progress </mat-card-title>
+            <button mat-raised-button> + Add Tasks</button>
+            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'IN_PROGRESS'">
+                {{ task.name }}
+            </mat-card>
+        </mat-card>
+        <mat-card class="progress-bucket">
+            <mat-card-title> Completed </mat-card-title>
+            <button mat-raised-button> + Add Tasks</button>
+            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'COMPLETED'">
+                {{ task.name }}
+            </mat-card>
+        </mat-card>
+    </main>
+</div>

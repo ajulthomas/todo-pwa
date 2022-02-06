@@ -21,6 +21,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { StatsComponent } from './views/stats/stats.component';
 import { ProgressComponent } from './views/progress/progress.component';
 import { ProfileDetailsComponent } from './views/profile-details/profile-details.component';
+import { TaskFilterPipe } from './pipes/task-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { ProfileDetailsComponent } from './views/profile-details/profile-details
     StatsComponent,
     ProgressComponent,
     ProfileDetailsComponent,
+    TaskFilterPipe,
   ],
   imports: [
     BrowserModule,

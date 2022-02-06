@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+
+    <mat-form-field appearance="outline" class="search-tasks">
+        <input matInput placeholder="Search for tasks">
+        <mat-icon id="search-icon" matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <header class="greet-user">
+        <h1 class="greet"> Hello {{ userName }},</h1>
+        <p>Welcome Back!</p>
+    </header>
+
+    <main>
+        <mat-card>
+            <div class="tasks-stat" *ngFor="let item of tasksSummary">
+                <button mat-mini-fab disabled>
+                    <mat-icon>{{item.icon}}</mat-icon>
+                </button>
+                <h3> {{ item.status}}</h3>
+                <h1>{{item.count}}</h1>
+            </div>
+        </mat-card>
+    </main>
+
+</div>

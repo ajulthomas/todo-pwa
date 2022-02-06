@@ -1,0 +1,66 @@
+.dashboard-container {
+  padding-left: 5%;
+  margin-top: 25px;
+}
+
+.mat-form-field {
+  width: 95%;
+  input {
+    font-size: 18px;
+  }
+  #search-icon {
+    width: 35px;
+    font-size: 35px;
+    height: 35px;
+    position: relative;
+    top: 5px;
+  }
+  #search-icon:hover {
+    cursor: pointer;
+    color: rgb(67, 67, 179);
+  }
+}
+
+.greet-user {
+  margin-top: 40px;
+  .greet {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: cursive;
+  }
+  p {
+    letter-spacing: 8px;
+    color: #a5a5a5;
+    font-family: cursive;
+    font-weight: 900;
+    font-size: 16px;
+  }
+}
+
+main {
+  margin-top: 30px;
+  .mat-card {
+    width: 90%;
+    background-color: rgba(255, 243, 228, 0.959);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .tasks-stat {
+    width: 25%;
+    text-align: center;
+    padding: 15px 0;
+    .mat-icon {
+      margin-bottom: 3px;
+      margin-right: 1px;
+    }
+    h3 {
+      color: #a5a5a5;
+      margin: 30px auto;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: 500;
+    }
+  }
+}

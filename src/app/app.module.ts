@@ -12,12 +12,24 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { MatRippleModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { StatsComponent } from './views/stats/stats.component';
 import { ProgressComponent } from './views/progress/progress.component';
 import { ProfileDetailsComponent } from './views/profile-details/profile-details.component';
 @NgModule({
-  declarations: [AppComponent, NavItemComponent, DashboardComponent, StatsComponent, ProgressComponent, ProfileDetailsComponent],
+  declarations: [
+    AppComponent,
+    NavItemComponent,
+    DashboardComponent,
+    StatsComponent,
+    ProgressComponent,
+    ProfileDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +44,10 @@ import { ProfileDetailsComponent } from './views/profile-details/profile-details
     MatSidenavModule,
     MatIconModule,
     MatRippleModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

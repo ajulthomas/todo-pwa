@@ -21,7 +21,17 @@ main {
     background-color: rgb(209, 248, 234);
   }
   .task-card {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    cursor: grab;
+  }
+  .task-card:active {
+    cursor: grabbing;
+  }
+  .task-card:-moz-drag-over {
+    cursor: grabbing;
+  }
+  .completed-tasks {
+    text-decoration: line-through;
   }
 }

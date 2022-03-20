@@ -3,25 +3,30 @@
         <h1>Progress View</h1>
     </header>
     <main>
-        <mat-card class="progress-bucket">
+        <mat-card cdkDropList #todoList="cdkDropList" class="progress-bucket"
+            (cdkDropListDropped)="onDrop($event, 'TODO')" [cdkDropListConnectedTo]="[inProgressList, completedList]">
             <mat-card-title> To do </mat-card-title>
-            <button mat-raised-button> + Add Tasks</button>
-            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'TODO'">
-                {{ task.name }}
+            <button mat-raised-button>+ Add Tasks</button>
+            <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'TODO'" cdkDrag>
+                {{ task.title }}
             </mat-card>
         </mat-card>
-        <mat-card class="progress-bucket">
+        <mat-card cdkDropList #inProgressList="cdkDropList" class="progress-bucket"
+            (cdkDropListDropped)="onDrop($event, 'IN_PROGRESS')" [cdkDropListConnectedTo]="[todoList, completedList]">
             <mat-card-title> In progress </mat-card-title>
-            <button mat-raised-button> + Add Tasks</button>
-            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'IN_PROGRESS'">
-                {{ task.name }}
+            <!-- <button mat-raised-button> + Add Tasks</button> -->
+            <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'IN_PROGRESS'"
+                cdkDrag>
+                {{ task.title }}
             </mat-card>
         </mat-card>
-        <mat-card class="progress-bucket">
+        <mat-card cdkDropList #completedList="cdkDropList" class="progress-bucket"
+            (cdkDropListDropped)="onDrop($event, 'COMPLETED')" [cdkDropListConnectedTo]="[todoList, inProgressList]">
             <mat-card-title> Completed </mat-card-title>
-            <button mat-raised-button> + Add Tasks</button>
-            <mat-card class="task-card" *ngFor="let task of tasks | taskFilter:'COMPLETED'">
-                {{ task.name }}
+            <!-- <button mat-raised-button> + Add Tasks</button> -->
+            <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'COMPLETED'"
+                cdkDrag>
+                {{ task.title }}
             </mat-card>
         </mat-card>
     </main>

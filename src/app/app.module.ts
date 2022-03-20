@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { StatsComponent } from './views/stats/stats.component';
@@ -50,6 +51,7 @@ import { TaskFilterPipe } from './pipes/task-filter.pipe';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

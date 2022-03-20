@@ -1,7 +1,9 @@
 export interface Task {
-  name: string;
+  id: string;
+  title: string;
+  desc?: string;
   status: TaskStatus;
-  project: string;
+  projectId: string;
 }
 
 export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'COMPLETED' | 'ARCHIVED';

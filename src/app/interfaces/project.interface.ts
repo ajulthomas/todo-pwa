@@ -1,9 +1,11 @@
-export interface Task {
-  id: string;
+export interface NewTask {
   title: string;
   desc?: string;
   status: TaskStatus;
-  projectId: string;
+}
+
+export interface Task extends NewTask {
+  id: string;
 }
 
 export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'COMPLETED' | 'ARCHIVED';

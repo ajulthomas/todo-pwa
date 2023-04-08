@@ -1,3 +1,5 @@
+import { TaskService } from 'src/app/services/task/task.service';
+import { Task } from 'src/app/interfaces/project.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,25 +10,48 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   userName = 'Allen';
 
-  tasksSummary = [
-    {
-      status: 'Total Tasks',
-      icon: 'reorder',
-      count: 900,
-    },
-    {
-      status: 'Completed Tasks',
-      icon: 'check_circle_outline_rounded',
-      count: 200,
-    },
-    {
-      status: 'Pending Tasks',
-      icon: 'pending_actions_rounded',
-      count: 600,
-    },
-  ];
+  tasks: Task[] = [];
 
-  constructor() {}
+  tasksSummary: any[] = [];
 
-  ngOnInit(): void {}
+  constructor(private ts: TaskService) {}
+
+  ngOnInit(): void {
+    this.tasks = this.ts.getTasks();
+    this.tasksSummary = this.createTasksSummary();
+  }
+
+  createTasksSummary() {
+    let todoCount = 0,
+      inProgressCount = 0,
+      completedCount = 0;
+    for (const task of this.tasks) {
+      if (task.status === 'TODO') {
+        todoCount++;
+      }
+      if (task.status === 'IN_PROGRESS') {
+        inProgressCount++;
+      }
+      if (task.status === 'COMPLETED') {
+        completedCount++;
+      }
+    }
+    return [
+      {
+        status: 'Tasks in Progress',
+        icon: 'reorder',
+        count: inProgressCount,
+      },
+      {
+        status: 'Completed Tasks',
+        icon: 'check_circle_outline_rounded',
+        count: completedCount,
+      },
+      {
+        status: 'Pending Tasks',
+        icon: 'pending_actions_rounded',
+        count: todoCount,
+      },
+    ];
+  }
 }

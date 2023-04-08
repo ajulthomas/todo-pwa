@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{ data ? 'Edit Task' : 'Add Task' }}</h1>
+<div mat-dialog-content>
+    <form #taskform="ngForm">
+        <mat-form-field>
+            <input matInput [(ngModel)]="taskName" name="taskName" placeholder="Task Name" required>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput [(ngModel)]="taskDescription" name="taskDescription" placeholder="Task Description"
+                required rows="5"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Task Status</mat-label>
+            <mat-select [(ngModel)]="taskStatus" name="taskStatus" required>
+                <mat-option value="TODO">TODO</mat-option>
+                <mat-option value="IN_PROGRESS">IN PROGRESS</mat-option>
+                <mat-option value="COMPLETED">COMPLETED</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onSaveClick()" color="primary" [disabled]="!taskform.valid">Save</button>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+</div>

@@ -1,0 +1,19 @@
+.mat-dialog-container {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-form-field {
+    margin-top: 10px;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }

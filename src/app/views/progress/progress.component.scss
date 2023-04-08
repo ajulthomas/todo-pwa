@@ -1,5 +1,5 @@
 .progress-container {
-  padding: 24px 15px 15px 5%;
+  padding: 24px 4% 15px 4%;
   // margin-top: 25px;
 }
 
@@ -8,22 +8,36 @@ main {
   justify-content: space-between;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  button {
+    margin: 0 8px;
+  }
+}
+
 .progress-bucket {
   width: 28%;
   height: 80vh;
-  background-color: rgb(233, 252, 245);
+  background-color: #e9f2fc;
   .mat-card-title {
     font-size: 15px;
     font-weight: 450;
   }
-  button {
-    width: 100%;
-    background-color: rgb(209, 248, 234);
-  }
+  // .add-task-btn {
+  //   width: 100%;
+  //   background-color: rgb(209, 248, 234);
+  // }
   .task-card {
     margin-top: 12px;
     margin-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     cursor: grab;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
   }
   .task-card:active {
     cursor: grabbing;
@@ -33,5 +47,11 @@ main {
   }
   .completed-tasks {
     text-decoration: line-through;
+  }
+  .dlt-tsk-btn{
+    .mat-icon {
+      color: #c74646;
+    }
+    
   }
 }

@@ -1,32 +1,57 @@
 <div class="progress-container">
     <header>
         <h1>Progress View</h1>
+        <span class="spacer"></span>
+        <button mat-mini-fab color="primary" (click)="addTask()"> <mat-icon>add</mat-icon></button>
+        <button mat-mini-fab color="primary"><mat-icon>upload</mat-icon></button>
+        <button mat-mini-fab color="primary"><mat-icon>download</mat-icon></button>
     </header>
     <main>
         <mat-card cdkDropList #todoList="cdkDropList" class="progress-bucket"
             (cdkDropListDropped)="onDrop($event, 'TODO')" [cdkDropListConnectedTo]="[inProgressList, completedList]">
-            <mat-card-title> To do </mat-card-title>
-            <button mat-raised-button (click)="addTask()">+ Add Tasks</button>
+            <mat-card-title align="center"> To do </mat-card-title>
+            <!-- <button mat-raised-button (click)="addTask()" class="add-task-btn">+ Add Tasks</button> -->
             <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'TODO'" cdkDrag>
                 {{ task.title }}
+                <span class="spacer"></span>
+                <button mat-icon-button aria-label="edit task">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="delete task" class="dlt-tsk-btn">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-card>
         </mat-card>
         <mat-card cdkDropList #inProgressList="cdkDropList" class="progress-bucket"
             (cdkDropListDropped)="onDrop($event, 'IN_PROGRESS')" [cdkDropListConnectedTo]="[todoList, completedList]">
-            <mat-card-title> In progress </mat-card-title>
+            <mat-card-title align="center"> In progress </mat-card-title>
             <!-- <button mat-raised-button> + Add Tasks</button> -->
             <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'IN_PROGRESS'"
                 cdkDrag>
                 {{ task.title }}
+                <span class="spacer"></span>
+                <button mat-icon-button aria-label="edit task">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="delete task" class="dlt-tsk-btn">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-card>
         </mat-card>
         <mat-card cdkDropList #completedList="cdkDropList" class="progress-bucket"
             (cdkDropListDropped)="onDrop($event, 'COMPLETED')" [cdkDropListConnectedTo]="[todoList, inProgressList]">
-            <mat-card-title> Completed </mat-card-title>
+            <mat-card-title align="center"> Completed </mat-card-title>
             <!-- <button mat-raised-button> + Add Tasks</button> -->
             <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'COMPLETED'"
                 cdkDrag>
                 {{ task.title }}
+                <span class="spacer"></span>
+                <button mat-icon-button aria-label="edit task">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="delete task" class="dlt-tsk-btn">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-card>
         </mat-card>
     </main>

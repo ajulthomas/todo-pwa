@@ -6,7 +6,7 @@
         <mat-card cdkDropList #todoList="cdkDropList" class="progress-bucket"
             (cdkDropListDropped)="onDrop($event, 'TODO')" [cdkDropListConnectedTo]="[inProgressList, completedList]">
             <mat-card-title> To do </mat-card-title>
-            <button mat-raised-button>+ Add Tasks</button>
+            <button mat-raised-button (click)="openAddTaskDialog()">+ Add Tasks</button>
             <mat-card class="task-card" [cdkDragData]="task" *ngFor="let task of tasks | taskFilter: 'TODO'" cdkDrag>
                 {{ task.title }}
             </mat-card>

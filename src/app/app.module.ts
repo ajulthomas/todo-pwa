@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -23,6 +24,7 @@ import { StatsComponent } from './views/stats/stats.component';
 import { ProgressComponent } from './views/progress/progress.component';
 import { ProfileDetailsComponent } from './views/profile-details/profile-details.component';
 import { TaskFilterPipe } from './pipes/task-filter.pipe';
+import { AddTaskDialogComponent } from './components/add-task-dialog/add-task-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import { TaskFilterPipe } from './pipes/task-filter.pipe';
     ProgressComponent,
     ProfileDetailsComponent,
     TaskFilterPipe,
+    AddTaskDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,8 @@ import { TaskFilterPipe } from './pipes/task-filter.pipe';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
+
     DragDropModule,
   ],
   providers: [],
